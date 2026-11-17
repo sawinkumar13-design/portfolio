@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Sawin Kumar",
+      "hasCanvas": false,
+      "bodyTextLen": 2558,
+      "bodyTextHash": "4073ffef91028d314ec2c615ed1481982f5a5b60900809c8c918d6f05881e15e",
+      "bodyTextPrefix": "SK Sawin Kumar Work About Skills Contact Resume OPEN FOR INTERNS",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Sawin Kumar",
+      "hasCanvas": false,
+      "bodyTextLen": 2535,
+      "bodyTextHash": "d6fcf60a07e1e30665005ccc55f74ccc27d5a1541bcdf10fbd3cb12eb264f6ab",
+      "bodyTextPrefix": "SK Sawin Kumar Open menu OPEN FOR INTERNSHIPS Sawin Kumar Second",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

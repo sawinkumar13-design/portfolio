@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sawin Kumar</title>
+  <meta name="description" content="Portfolio of Sawin Kumar, B.Tech CSE student at GLA University. Python, Java, and data work." />
+  <meta name="theme-color" content="#f3efe6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --ink: #1a1714;
+      --muted: #6d655c;
+      --line: #ddd4c6;
+      --accent: #0c6b52;
+      --accent-soft: #e4f3ec;
+      --surface: #faf7f2;
+      --chip: #efeae1;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Outfit, system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    button, a { cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar { display: flex; align-items: center; justify-content: space-between; min-height: 4.25rem; }
+    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; font-weight: 500; }
+    .mark {
+      width: 2.75rem; height: 2.75rem; border-radius: 999px;
+      display: grid; place-items: center;
+      background: var(--accent); color: var(--surface);
+      font-family: Fraunces, Georgia, serif; font-size: 1.05rem;
+    }
+    nav { display: flex; gap: 0.25rem; }
+    nav a {
+      display: inline-flex; align-items: center; height: 2.75rem;
+      padding: 0 0.75rem; border-radius: 999px; text-decoration: none; font-size: 0.95rem; font-weight: 500;
+    }
+    nav a:hover { background: var(--chip); }
+    .hero { display: grid; gap: 2.5rem; padding: 3rem 0 3.5rem; align-items: end; }
+    .kicker { color: var(--accent); font-weight: 500; font-size: 0.95rem; margin: 0; }
+    h1 {
+      font-family: Fraunces, Georgia, serif; font-weight: 560;
+      font-size: clamp(3rem, 8vw, 5.5rem); line-height: 0.95;
+      letter-spacing: -0.03em; margin: 0.6rem 0 0;
+    }
+    .lede { max-width: 38rem; color: var(--muted); font-size: 1.15rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      min-height: 2.75rem; padding: 0 1.15rem; border-radius: 999px;
+      text-decoration: none; font-weight: 500; border: 1px solid transparent; background: transparent;
+      font: inherit;
+    }
+    .btn.solid { background: var(--accent); color: var(--surface); }
+    .btn.ghost { background: var(--surface); border-color: var(--line); }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; padding: 1.5rem;
+    }
+    .card h2 { font-family: Fraunces, Georgia, serif; font-size: 1.8rem; line-height: 1.15; margin: 0.4rem 0 0; font-weight: 560; }
+    .meta { color: var(--muted); font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0 0; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+    .facts dt { color: var(--muted); font-size: 0.9rem; }
+    .facts dd { margin: 0.15rem 0 0; font-weight: 500; }
+    section.block { border-top: 1px solid var(--line); padding: 3rem 0; }
+    .head { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: end; }
+    h2.sec { font-family: Fraunces, Georgia, serif; font-size: 2.4rem; margin: 0; font-weight: 560; }
+    .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .filters button {
+      height: 2.75rem; padding: 0 1rem; border-radius: 999px; border: 0;
+      background: var(--chip); font: inherit; font-size: 0.95rem; font-weight: 500;
+    }
+    .filters button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+    .work { display: grid; gap: 1rem; margin-top: 1.75rem; }
+    .plist { display: grid; gap: 0.75rem; list-style: none; margin: 0; padding: 0; }
+    .plist button {
+      width: 100%; text-align: left; font: inherit; color: inherit;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; padding: 1.15rem 1.25rem;
+    }
+    .plist button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+    .plist h3 { font-family: Fraunces, Georgia, serif; font-size: 1.45rem; margin: 0; font-weight: 560; }
+    .top { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+    .num { color: var(--muted); font-size: 0.9rem; }
+    .detail {
+      background: var(--ink); color: var(--surface); border-radius: 1.25rem; padding: 1.5rem;
+    }
+    .detail p.note { color: #e4f3ec; font-size: 0.9rem; margin: 0; }
+    .detail h3 { font-family: Fraunces, Georgia, serif; font-size: 1.8rem; line-height: 1.15; margin: 0.7rem 0 0; font-weight: 560; }
+    .detail .body { color: color-mix(in srgb, var(--surface) 82%, transparent); }
+    .stack { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; padding: 0; margin: 1.2rem 0 0; }
+    .stack li { background: color-mix(in srgb, var(--surface) 12%, transparent); border-radius: 999px; padding: 0.25rem 0.7rem; font-size: 0.9rem; }
+    .about { display: grid; gap: 1rem; }
+    .about p { font-size: 1.1rem; margin: 0; }
+    .about .quiet { color: var(--muted); }
+    .contact {
+      background: var(--accent); color: var(--surface); border-radius: 1.25rem; padding: 2.4rem 1.5rem;
+    }
+    .contact h2 { font-family: Fraunces, Georgia, serif; font-size: 2.4rem; margin: 0; font-weight: 560; }
+    .contact .soft { color: #e4f3ec; }
+    .contact .btn.paper { background: var(--surface); color: var(--ink); }
+    .contact .btn.line { border-color: color-mix(in srgb, var(--surface) 40%, transparent); color: var(--surface); }
+    footer { color: var(--muted); font-size: 0.9rem; padding: 1.5rem 0 2.5rem; }
+    @media (min-width: 800px) {
+      .hero { grid-template-columns: 1.3fr 1fr; padding: 5rem 0; }
+      .work { grid-template-columns: 1.4fr 1fr; align-items: start; }
+      .about { grid-template-columns: 1fr 2fr; gap: 2rem; }
+      .contact { padding: 2.5rem 2.5rem; }
+    }
+    @media (max-width: 640px) {
+      .brand span { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#top"><span class="mark">SK</span><span>Sawin Kumar</span></a>
+      <nav aria-label="Page">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div>
+        <p class="kicker">India · Portfolio</p>
+        <h1>Sawin Kumar</h1>
+        <p class="lede">Computer science student at GLA University. I write Python when the question is about data, and Java when the question wants a clear object.</p>
+        <div class="row">
+          <a class="btn solid" href="mailto:sawinkumar13@gmail.com">Email me</a>
+          <a class="btn ghost" href="https://github.com/sawinkumar13-design">GitHub ↗</a>
+        </div>
+      </div>
+      <aside class="card">
+        <p class="meta">GLA University</p>
+        <h2>B.Tech CSE, aiming at data and software.</h2>
+        <p class="meta">Mathura, India</p>
+        <dl class="facts">
+          <div><dt>Degree</dt><dd>B.Tech, Computer Science</dd></div>
+          <div><dt>Campus</dt><dd>GLA University, Mathura</dd></div>
+          <div><dt>Standing</dt><dd>7.9 CPI</dd></div>
+          <div><dt>Years</dt><dd>2025 — 2029</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="block" id="work">
+      <div class="head">
+        <div>
+          <h2 class="sec">Selected work</h2>
+          <p class="lede">Course and practice projects. Pick a lane, then open a card for the longer note.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" data-filter="All" aria-pressed="true">All</button>
+          <button type="button" data-filter="Python" aria-pressed="false">Python</button>
+          <button type="button" data-filter="Java" aria-pressed="false">Java</button>
+          <button type="button" data-filter="ML" aria-pressed="false">ML</button>
+        </div>
+      </div>
+      <div class="work">
+        <ul class="plist" id="list"></ul>
+        <article class="detail" id="detail"></article>
+      </div>
+    </section>
+
+    <section class="block about" id="about">
+      <h2 class="sec">About</h2>
+      <div>
+        <p>I am in the 2025–2029 computer science batch at GLA University, Mathura, currently at a 7.9 CPI. The work I care about sits between software engineering and data science.</p>
+        <p class="quiet">Alongside campus, I keep BridgeLabz training notes on GitHub and practice algorithms on LeetCode. I would rather show a small finished program than a long list of tools.</p>
+        <div class="row">
+          <a class="btn ghost" href="https://github.com/sawinkumar13-design/Bridgelabz-Training-1Y">BridgeLabz 1Y</a>
+          <a class="btn ghost" href="https://github.com/sawinkumar13-design/Bridgelabz-Training-2Y">BridgeLabz 2Y</a>
+          <a class="btn ghost" href="https://sawinkumar13-design.github.io/project-/">Earlier site</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Say hello</h2>
+      <p class="soft">For internships, project help, or a plain introduction — email is the fastest.</p>
+      <div class="row">
+        <button class="btn paper" id="copy" type="button">sawinkumar13@gmail.com</button>
+        <a class="btn line" href="tel:+919259451815">+91 92594 51815</a>
+        <a class="btn line" href="https://linkedin.com/in/sawinkumar">LinkedIn</a>
+      </div>
+      <p class="soft">Campus mail: sawin.kumar_cs25@gla.ac.in</p>
+    </section>
+    <footer>© 2026 Sawin Kumar · GLA University</footer>
+  </main>
+  <script>
+    const projects = [
+      { title: "Employee Data Analysis", blurb: "Clean records, fill gaps, and chart how a team is actually shaped.", detail: "A Python notebook that ingests employee records, imputes missing values, groups across several columns, and draws charts of the patterns that show up.", tags: ["Python"], stack: ["Python", "Pandas", "NumPy", "Matplotlib"] },
+      { title: "Banking System", blurb: "A menu-driven console bank with a small, explicit class model.", detail: "Java console app for deposit, withdrawal, balance inquiry, and account checks. Each action lives in its own method so the menu stays thin.", tags: ["Java"], stack: ["Java", "OOP"] },
+      { title: "Predictive Modeling Pipeline", blurb: "Prepare a table, then train a model without hiding the steps.", detail: "A short machine-learning pipeline in Python: load tabular data, keep the cleaning visible, and fit a predictive model on what remains.", tags: ["Python", "ML"], stack: ["Python", "NumPy", "Pandas"] },
+      { title: "DSA Practice Suite", blurb: "Arrays, strings, two pointers, and recursion — timed, then rewritten.", detail: "Implementations in Java and Python, practiced on LeetCode. The goal is a clear solution first, then a tighter one.", tags: ["Java", "Python"], stack: ["Java", "Python", "LeetCode"], href: "https://leetcode.com/u/sawinkumar/", link: "LeetCode" }
+    ];
+    const list = document.getElementById("list");
+    const detail = document.getElementById("detail");
+    let filter = "All";
+    let active = 0;
+    function visible() {
+      return projects.filter((p) => filter === "All" || p.tags.includes(filter));
+    }
+    function render() {
+      const items = visible();
+      if (active >= items.length) active = 0;
+      list.innerHTML = items.map((p, i) => `
+        <li><button type="button" data-i="${i}" aria-pressed="${i === active}">
+          <div class="top"><h3>${p.title}</h3><span class="num">${String(i + 1).padStart(2, "0")}</span></div>
+          <p>${p.blurb}</p>
+        </button></li>`).join("");
+      const p = items[active];
+      const link = p.href ? `<p><a href="${p.href}">${p.link} ↗</a></p>` : `<p class="note">Write-up lives with the coursework, not a public demo yet.</p>`;
+      detail.innerHTML = `<p class="note">Now reading</p><h3>${p.title}</h3><p class="body">${p.detail}</p><ul class="stack">${p.stack.map((s) => `<li>${s}</li>`).join("")}</ul>${link}`;
+    }
+    list.addEventListener("click", (event) => {
+      const button = event.target.closest("button");
+      if (!button) return;
+      active = Number(button.dataset.i);
+      render();
+    });
+    document.querySelectorAll("[data-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        filter = button.dataset.filter;
+        active = 0;
+        document.querySelectorAll("[data-filter]").forEach((el) => el.setAttribute("aria-pressed", String(el === button)));
+        render();
+      });
+    });
+    document.getElementById("copy").addEventListener("click", async () => {
+      const button = document.getElementById("copy");
+      try {
+        await navigator.clipboard.writeText("sawinkumar13@gmail.com");
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = "sawinkumar13@gmail.com"; }, 1600);
+      } catch { /* leave the address visible */ }
+    });
+    render();
+  </script>
+</body>
+</html>

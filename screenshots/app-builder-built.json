@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Sawin Kumar",
+      "hasCanvas": false,
+      "bodyTextLen": 2548,
+      "bodyTextHash": "6ce4621e104e579d076c2ac6d69f9c1cfb9d7e8ddf20278ca162bed86af17aad",
+      "bodyTextPrefix": "Sawin Kumar Work About Skills Contact OPEN FOR INTERNSHIPS Sawin",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Sawin Kumar",
+      "hasCanvas": false,
+      "bodyTextLen": 2527,
+      "bodyTextHash": "a58447509f865d1140880b729b92ee6900aff199429b5336154cee68a8422950",
+      "bodyTextPrefix": "Sawin Kumar Menu OPEN FOR INTERNSHIPS Sawin Kumar Second-year co",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

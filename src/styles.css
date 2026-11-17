@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #1b1e1c;
+  --color-surface: #202421;
+  --color-card: #252a26;
+  --color-ink: #f0eee7;
+  --color-muted: #b7bcb5;
+  --color-faint: #92988f;
+  --color-accent: #a6b69d;
+  --color-accent-hover: #bac7b2;
+  --color-line: #3b423c;
+  --color-neutral: #737b70;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: Inter, system-ui, sans-serif;
+  --radius-card: 1.5rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+
+  body {
+    background: #121413;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+.space {
+  background: #101211;
+  isolation: isolate;
+}
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.atmosphere span {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+}
+
+.atmosphere span:nth-child(1) {
+  top: -8rem;
+  left: -6rem;
+  width: 36rem;
+  height: 28rem;
+  background: rgba(166, 182, 157, 0.38);
+}
+
+.atmosphere span:nth-child(2) {
+  top: 18%;
+  right: -8rem;
+  width: 32rem;
+  height: 32rem;
+  background: rgba(240, 238, 231, 0.12);
+}
+
+.atmosphere span:nth-child(3) {
+  bottom: -10rem;
+  left: 20%;
+  width: 40rem;
+  height: 24rem;
+  background: rgba(55, 68, 58, 0.55);
+}
+
+.layer {
+  position: relative;
+}
+
+.pane {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03) 42%, rgba(255, 255, 255, 0.02)),
+    rgba(22, 26, 23, 0.46);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.5rem;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08),
+    0 16px 32px rgba(0, 0, 0, 0.28),
+    0 42px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(28px) saturate(1.25);
+  -webkit-backdrop-filter: blur(28px) saturate(1.25);
+}
+
+.pane-near {
+  background-color: rgba(18, 22, 19, 0.38);
+  backdrop-filter: blur(40px) saturate(1.35);
+  -webkit-backdrop-filter: blur(40px) saturate(1.35);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.16),
+    0 10px 24px rgba(0, 0, 0, 0.24),
+    0 30px 70px rgba(0, 0, 0, 0.4);
+}
+
+.lift {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease;
+}
+
+.lift:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2),
+    0 24px 40px rgba(0, 0, 0, 0.32),
+    0 56px 100px rgba(0, 0, 0, 0.46);
+}
+
+.nav-item {
+  border-radius: 999px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-ink);
+}
+
+.nav-item[aria-current="true"] {
+  background: rgba(166, 182, 157, 0.2);
+  color: var(--color-ink);
+}
+
+.menu-row {
+  border-radius: 1rem;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s ease;
+}
+
+.menu-row:hover {
+  transform: translateX(8px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.portrait {
+  filter: saturate(0.78) contrast(1.04);
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .rise,
+  .lift:hover,
+  .nav-item:hover,
+  .menu-row:hover {
+    animation: none;
+    transform: none;
+  }
+}
